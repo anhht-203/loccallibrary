@@ -14,7 +14,10 @@ export class ENTITY_PROPERTY_LENGTH {
   static readonly NUM_500 = 500
   static readonly NUM_1000 = 1000
 }
-export class BOOK_INSTANCE_STATUS {
-  static readonly AVAILABLE = 'Available'
-  static readonly UNAVAILABLE = 'Unavailable'
+export enum BOOK_INSTANCE_STATUS {
+  AVAILABLE = 'Available',
+  UNAVAILABLE = 'Unavailable',
+  MAINTENANCE = 'Maintenance',
+  RESERVED = 'Reserved',
+  LOANED = 'Loaned'
 }

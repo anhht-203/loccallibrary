@@ -22,7 +22,8 @@ export const index = expressAsyncHandler(async (req: Request, res: Response, nex
   })
 })
 export const getBook = expressAsyncHandler(async (req: Request, res: Response, next: NextFunction) => {
-  res.send('NOT IMPLEMENTED: Book list')
+  const books = await bookService.getBookList()
+  res.render('books/index', { books, title: 'book.title.listOfBook' })
 })
 export const getBookDetail = expressAsyncHandler(async (req: Request, res: Response, next: NextFunction) => {
   res.send(`NOT IMPLEMENTED: Book detail: ${req.params.id}`)

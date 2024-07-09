@@ -6,6 +6,9 @@ class GenreService {
   async countGenres() {
     return this.genreRepository.count()
   }
+  async getGenreList() {
+    return this.genreRepository.find({ order: { name: 'ASC' } })
+  }
 }
 const genreService = new GenreService()
 export default genreService

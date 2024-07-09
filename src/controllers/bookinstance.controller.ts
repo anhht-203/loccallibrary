@@ -1,8 +1,14 @@
 import { NextFunction, Request, Response } from 'express'
 import expressAsyncHandler from 'express-async-handler'
-
+import bookInstanceService from '../services/bookInstance.service'
+import { BOOK_INSTANCE_STATUS } from '~/constants/typedb.constant'
 export const getBookInstance = expressAsyncHandler(async (req: Request, res: Response, next: NextFunction) => {
-  res.send('NOT IMPLEMENTED: BookInstance list')
+  const bookInstances = await bookInstanceService.getBookInstanceList()
+  res.render('bookInstance/index', {
+    bookInstances,
+    title: 'bookInstance.title.listOfBookInstance',
+    BOOK_INSTANCE_STATUS
+  })
 })
 export const getBookInstanceDetail = expressAsyncHandler(async (req: Request, res: Response, next: NextFunction) => {
   res.send(`NOT IMPLEMENTED: BookInstance detail: ${req.params.id}`)

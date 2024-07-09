@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  h1 #{t(title)}
+  if books.length
+    ul
+      each book in books
+        li
+          a(href=`/books/${book.id}`) #{book.title}
+          | (#{book.author.firstName + ' '+ book.author.familyName})
+
+  else
+    p #{t('book.title.emptyBookList')}

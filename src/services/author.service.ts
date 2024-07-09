@@ -6,6 +6,9 @@ class AuthorService {
   async countAuthors() {
     return this.authorRepository.count()
   }
+  async getAuthorList() {
+    return this.authorRepository.find({ order: { firstName: 'ASC' } })
+  }
 }
 const authorService = new AuthorService()
 export default authorService

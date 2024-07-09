@@ -23,5 +23,36 @@
   "language" : {
     "en": "Tiếng Anh",
     "vi": "Tiếng Việt"
+  },
+  "book": {
+    "title": {
+      "listOfBook": "Danh sách các quyển sách có trong thư viện",
+      "emptyBookList": "Không có quyển sách nào"
+    }
+  },
+  "author": {
+    "title": {
+      "listOfAuthor": "Danh sách tác giả",
+      "emptyAuthorList": "Không có tác giả nào"
+    }
+  },
+  "bookInstance": {
+    "title": {
+      "listOfBookInstance": "Danh sách các bản sao sách có trong thư viện",
+      "emptyBookInstanceList": "Không có bản sao sách nào"
+    },
+    "imprint": "Nhà xuất bản",
+    "status": {
+      "available": "Có sẵn",
+      "loaned": "Đang cho mượn",
+      "maintenance": "Bảo trì"
+    },
+    "dueBack": "Hạn cuối"
+  },
+  "genre": {
+    "title": {
+      "listOfGenre": "Danh sách thể loại",
+      "emptyGenreList": "Không có thể loại nào"
+    }
   }
 }

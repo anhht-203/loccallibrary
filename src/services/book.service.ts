@@ -6,6 +6,9 @@ class BookService {
   async countBooks() {
     return this.bookRepository.count()
   }
+  async getBookList() {
+    return this.bookRepository.find({ order: { title: 'ASC' }, relations: ['author'] })
+  }
 }
 const bookService = new BookService()
 export default bookService

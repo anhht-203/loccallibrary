@@ -1,8 +1,10 @@
 import { Request, Response, NextFunction } from 'express'
 import asyncHandler from 'express-async-handler'
+import authorService from '../services/author.service'
 // Display list of all Authors.
 export const authorList = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
-  res.send('NOT IMPLEMENTED: Author list')
+  const authors = await authorService.getAuthorList()
+  res.render('authors/index', { authors, title: 'author.title.listOfAuthor' })
 })
 // Display detail page for a specific Author.
 export const authorDetail = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
