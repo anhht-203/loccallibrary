@@ -1,12 +1,13 @@
 import express from 'express'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
-import createError from 'http-errors'
 import path from 'path'
 import indexRouter from './router/index'
 import usersRouter from './router/user'
+import { AppDataSource } from './config/data-source'
+
 const app = express()
-// Set up view engine
+
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
@@ -28,11 +29,15 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
   res.locals.message = err.message
   res.locals.error = req.app.get('env') === 'development' ? err : {}
 
-  // Render the error page
   res.status(err.status || 500)
   res.render('error')
 })
 app.listen(3000, () => {
   console.log('listening on port 3000')
 })
+AppDataSource.initialize()
+  .then(() => {
+    console.log('Database initialized')
+  })
+  .catch((error) => console.log('Database connect failed: ', error))
 export default app
