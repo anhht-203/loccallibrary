@@ -6,8 +6,34 @@ import indexRouter from './router/index'
 import usersRouter from './router/user'
 import { AppDataSource } from './config/data-source'
 import router from './router/index'
+import i18next from 'i18next'
+import Backend from 'i18next-fs-backend'
+import middleware from 'i18next-http-middleware'
 
 const app = express()
+
+i18next
+  .use(Backend)
+  .use(middleware.LanguageDetector)
+  .init({
+    fallbackLng: 'vi',
+    preload: ['en', 'vi'],
+    supportedLngs: ['en', 'vi'],
+    backend: {
+      loadPath: __dirname + '/locales/{{lng}}/{{ns}}.json',
+      addPath: __dirname + '/locales/{{lng}}/{{ns}}.missing.json'
+    },
+    detection: {
+      order: ['querystring', 'cookie'],
+      caches: ['cookie'],
+      lookupQuerystring: 'lang', // ?lng=en or ?lng=vi để chuyển ngôn ngữ trên url
+      lookupCookie: 'lang', // chuyển ngôn ngữ bằng cách set cookie
+      ignoreCase: true,
+      cookieSecure: false
+    }
+  })
+
+app.use(middleware.handle(i18next))
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')

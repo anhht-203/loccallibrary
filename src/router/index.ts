@@ -4,13 +4,12 @@ import authorRouter from './author.router'
 import bookRouter from './book.router'
 import bookinstanceRouter from './bookinstance.router'
 import genreRouter from './genre.router'
+import { index } from '~/controllers/book.controller'
 
 // import all route modules for your site at here
 const router: Router = Router()
 // ...
-router.get('/', (req: Request, res: Response, next: NextFunction) => {
-  res.render('index', { title: 'Express' })
-})
+router.get('/', index)
 router.use('/authors', authorRouter)
 router.use('/books', bookRouter)
 router.use('/bookinstances', bookinstanceRouter)
