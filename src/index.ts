@@ -5,6 +5,7 @@ import path from 'path'
 import indexRouter from './router/index'
 import usersRouter from './router/user'
 import { AppDataSource } from './config/data-source'
+import router from './router/index'
 
 const app = express()
 
@@ -20,8 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 // Routes
 // import your routes and use them here
 
-app.use('/', indexRouter)
-app.use('/users', usersRouter)
+app.use('/', router)
 
 // Error handler
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
