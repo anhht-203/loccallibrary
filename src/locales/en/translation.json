@@ -23,5 +23,36 @@
   "language" : {
     "en": "English",
     "vi": "Vietnamese"
+  },
+  "book": {
+    "title": {
+      "listOfBook": "List of books available in the library",
+      "emptyBookList": "There are no books"
+    }
+  },
+  "author": {
+    "title": {
+      "listOfAuthor": "Author list",
+      "emptyAuthorList": "There are no authors"
+    }
+  },
+  "bookInstance": {
+    "title": {
+      "listOfBookInstance": "Book Instance List in the library",
+      "emptyBookInstanceList": "There are no book instances"
+    },
+    "imprint": "Imprint",
+    "status": {
+      "available": "Available",
+      "loaned": "Loaned",
+      "maintenance": "Maintenance"
+    },
+    "dueBack": "Due back"
+  },
+  "genre": {
+    "title": {
+      "listOfGenre": "Genre list",
+      "emptyGenreList": "There are no genres"
+    }
   }
 }

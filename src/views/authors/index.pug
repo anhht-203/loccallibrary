@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  h1 #{t(title)}
+  if authors.length
+    ul
+      each author in authors
+        li
+          a(href=`/authors/${author.id}`) #{author.familyName}, #{author.firstName} 
+          | (#{author.dateOfBirth ? new Date(author.dateOfBirth) : ''} - #{author.dateOfDeath ? new Date(author.dateOfDeath) : ''})
+  else
+    p #{t('author.title.emptyAuthorList')}

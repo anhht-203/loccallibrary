@@ -10,6 +10,9 @@ class BookInstanceService {
   async countAvailableBookInstances() {
     return this.bookInstanceRepository.count({ where: { status: BOOK_INSTANCE_STATUS.AVAILABLE } })
   }
+  async getBookInstanceList() {
+    return this.bookInstanceRepository.find({ relations: ['book'] })
+  }
 }
 const bookInstanceService = new BookInstanceService()
 export default bookInstanceService
