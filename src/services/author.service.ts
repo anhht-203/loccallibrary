@@ -9,6 +9,9 @@ class AuthorService {
   async getAuthorList() {
     return this.authorRepository.find({ order: { firstName: 'ASC' } })
   }
+  async getAuthorById(id: number) {
+    return this.authorRepository.findOne({ relations: ['books'], where: { id: id } })
+  }
 }
 const authorService = new AuthorService()
 export default authorService

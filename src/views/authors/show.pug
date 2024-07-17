@@ -1,0 +1,11 @@
+extends ../layout
+
+block content 
+  h1 #{t('home.author')}: #{author.firstName} #{author.familyName}
+  p #[strong #{t('home.book')} ] 
+  if authorBooks.length !== 0
+    each val, index in authorBooks
+      a(href=`/books/${val.id}`) #{val.title}
+      p #{val.summary}
+  else
+    p #{t('author.message.emptyBookList')}

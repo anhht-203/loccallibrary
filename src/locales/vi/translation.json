@@ -7,7 +7,9 @@
     "bookInstance": "Bản sao",
     "availableBookInstance": "Tất cả bản sao sách có sẵn",
     "author": "Tác giả",
-    "genre": "Thể loại"
+    "genre": "Thể loại",
+    "status": "Tình trạng",
+    "title": "Chủ đề"
   },
   "sidebar" : {
     "name": "Thư viện địa phương",
@@ -26,9 +28,16 @@
   },
   "book": {
     "title": {
+      "name": "Chủ đề",
       "listOfBook": "Danh sách các quyển sách có trong thư viện",
       "emptyBookList": "Không có quyển sách nào"
-    }
+    },
+    "summary": "Tóm tắt",
+    "isbn": "Mã số ISBN",
+    "author": "Tác giả",
+    "genre": "Thể loại",
+    "copies": "Bản sao",
+    "noGenre": "Không có thể loại nào cho sách này"
   },
   "author": {
     "title": {
@@ -47,7 +56,8 @@
       "loaned": "Đang cho mượn",
       "maintenance": "Bảo trì"
     },
-    "dueBack": "Hạn cuối"
+    "dueBack": "Hạn cuối",
+    "noBookInstance": "Không có bản sao sách nào trong thư viện."
   },
   "genre": {
     "title": {

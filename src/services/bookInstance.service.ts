@@ -13,6 +13,9 @@ class BookInstanceService {
   async getBookInstanceList() {
     return this.bookInstanceRepository.find({ relations: ['book'] })
   }
+  async getBookInstanceById(id: number) {
+    return this.bookInstanceRepository.findOne({ relations: ['book'], where: { id: id } })
+  }
 }
 const bookInstanceService = new BookInstanceService()
 export default bookInstanceService
