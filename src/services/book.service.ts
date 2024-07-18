@@ -12,6 +12,15 @@ class BookService {
   async getBookById(id: number) {
     return this.bookRepository.findOne({ relations: ['author', 'genres', 'bookInstances'], where: { id: id } })
   }
+  async updateBook(book: Book) {
+    return this.bookRepository.save(book)
+  }
+  async createBook(book: Book) {
+    return this.bookRepository.save(book)
+  }
+  async deleteBook(id: number) {
+    return this.bookRepository.delete(id)
+  }
 }
 const bookService = new BookService()
 export default bookService

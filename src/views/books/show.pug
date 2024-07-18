@@ -20,23 +20,23 @@ block content
         if index < bookGenres.length - 1
           | , 
     else
-      | #{t('book.nogenre')}
+      | #{t('genre.title.emptyGenreList')}
 
   div(class = 'mt-5 ml-5')
     h4 #{t('book.copies')}
     if bookInstances.length > 0
       each val in bookInstances
         hr
-        if val.status == 'Available'
+        if val.status == BOOK_INSTANCE_STATUS.AVAILABLE
           p.text-success #{val.status}
-        else if val.status == 'Maintenance'
+        else if val.status == BOOK_INSTANCE_STATUS.MAINTENANCE
           p.text-danger #{val.status}
         else
           p.text-warning #{val.status}
         p
           strong #{t('bookInstance.imprint')}: 
           | #{val.imprint}
-        if val.status != 'Available'
+        if val.status != BOOK_INSTANCE_STATUS.AVAILABLE
           p
             strong #{t('bookInstance.dueBack')}: 
             | #{val.dueBack}
@@ -45,3 +45,8 @@ block content
           a(href=`/bookinstances/${val.id}`) #{val.id}
     else
       p #{t('bookInstance.noBookInstance')}
+  hr
+  p
+  a(href=`${book.id}/delete`) #{t('button.delete')}
+  p
+  a(href=`${book.id}/update`) #{t('button.edit')}

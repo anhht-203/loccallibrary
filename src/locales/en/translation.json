@@ -9,7 +9,8 @@
     "author": "Author",
     "genre": "Genre",
     "status": "Status",
-    "title": "Title"
+    "title": "Title",
+    "submit": "Submit"
   },
   "sidebar" : {
     "name": "Local Library",
@@ -27,6 +28,9 @@
     "vi": "Vietnamese"
   },
   "book": {
+    "createBook": "Create Book",
+    "deleteBook": "Delete Book",
+    "updateBook": "Update Book",
     "title": {
       "name": "Title",
       "listOfBook": "List of books available in the library",
@@ -37,15 +41,31 @@
     "author": "Author",
     "genre": "Genre",
     "copies": "Copies",
-    "noGenre": "No genre for this book"
+    "noGenre": "No genre for this book",
+    "selectAuthor": "Select Author",
+    "deleteWarning":"Delete the following book instances before attempting to delete this book.",
+    "deleteConfirm": "Are you sure you want to delete this book?"
   },
   "author": {
+    "createAuthor":"Create Author",
+    "deleteAuthor": "Delete Author",
     "title": {
       "listOfAuthor": "Author list",
       "emptyAuthorList": "There are no authors"
-    }
+    },
+    "firstName": "First name",
+    "familyName": "Family name",
+    "dateOfBirth": "Date of birth",
+    "dateOfDeath": "Date of death",
+    "noBook": "No book by this author",
+    "deleteWarning":"Delete the following books before attempting to delete this author.",
+    "deleteConfirm": "Are you sure you want to delete this author?"
+
   },
   "bookInstance": {
+    "createBookInstance": "Create Book Instance",
+    "deleteBookInstance": "Delete Book Instance",
+    "updateBookInstance": "Update Book Instance",
     "title": {
       "listOfBookInstance": "Book Instance List in the library",
       "emptyBookInstanceList": "There are no book instances"
@@ -57,12 +77,61 @@
       "maintenance": "Maintenance"
     },
     "dueBack": "Due back",
-    "noBookInstance": "There are no copies of this book in the library."
+    "noBookInstance": "There are no copies of this book in the library.",
+    "selectBook": "Select Book"
   },
   "genre": {
+    "createGenre": "Create Genre",
+    "deleteGenre": "Delete Genre",
+    "updateGenre": "Update Genre",
     "title": {
       "listOfGenre": "Genre list",
       "emptyGenreList": "There are no genres"
-    }
+    },
+    "deleteWarning":"Delete the following books before attempting to delete this genre.",
+    "deleteConfirm": "Are you sure you want to delete this genre?"
+  },
+  "button": {
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "delete": "Delete"
+  },
+  "validation":{
+    "required": "This field is required",
+    "isbn": "ISBN must be a number",
+    "date": "Invalid date",
+    "number": "This field must be a number",
+    "min": "This field must be at least {min} characters",
+    "max": "This field must be at most {max} characters",
+    "select": "Please select an option",
+    "unique": "This field must be unique",
+    "invalid": "Invalid input",
+    "minMax": "This field must be between {min} and {max} characters",
+    "firstName": "First name is required",
+    "familyName": "Family name is required",
+    "dateOfBirth": "Date of birth is required",
+    "dateOfDeath": "Date of death is required",
+    "imprint": "Imprint is required",
+    "dueBack": "Due back is required",
+    "author": "Author is required",
+    "genre": "Genre is required",
+    "book": "Book is required",
+    "nameGenre": "Genre name is required",
+    "status": "Status is required",
+    "title": "Title is required",
+    "summary": "Summary is required"
+  },
+  "message": {
+    "deleteSuccess": "Delete successfully",
+    "deleteFail": "Delete failed",
+    "createSuccess": "Create successfully",
+    "createFail": "Create failed",
+    "updateSuccess": "Update successfully",
+    "updateFail": "Update failed",
+    "notFound": "Not found",
+    "invalidAuthorId": "Invalid author ID",
+    "invalidBookId": "Invalid book ID",
+    "invalidGenreId": "Invalid genre ID",
+    "invalidBookInstanceId": "Invalid book instance ID"
   }
 }

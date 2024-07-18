@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+  h1 #{t(title)}
+  form(method='POST')
+    div.form-group
+      label(for='title') #{t('home.title')}
+      input#title.form-control(type='text', name='title' value=book.title)
+    div.form-group
+      label(for='author') #{t('home.author')}
+      select#author.form-control(name='author')
+        each author in authors
+          option(value=author.id selected=(author.id === book.author.id) ? 'selected' : '') #{author.firstName} #{author.familyName}
+    div.form-group
+      label(for='summary') #{t('book.summary')}
+      textarea#summary.form-control(name='summary') #{book.summary}
+    div.form-group
+      label(for='isbn') #{t('book.isbn')}
+      input#isbn.form-control(type='text', name='isbn' value=book.isbn)
+    div.form-group
+      label(for='genre') #{t('home.genre')}:
+      each genre in genres
+        div.form-check.form-check-inline
+          input.form-check-input(type='checkbox',value=genre.id, name='genre', checked=bookGenres.some(bookGenre => bookGenre.id === genre.id))
+          label.form-check-label #{genre.name}
+    button.btn.btn-primary(type='submit') #{t('button.submit')}
+  if errors
+    ul
+      for error in errors
+        li!= error.msg
+

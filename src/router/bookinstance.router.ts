@@ -10,6 +10,9 @@ bookinstanceRouter.post('/create', bookinstanceController.createBookInstancePost
 // GET request to delete BookInstance.
 bookinstanceRouter.get('/:id/delete', bookinstanceController.deleteBookInstanceGet)
 
+// POST request to delete BookInstance.
+bookinstanceRouter.post('/:id/delete', bookinstanceController.deleteBookInstancePost)
+
 // GET request to update BookInstance.
 bookinstanceRouter.get('/:id/update', bookinstanceController.updateBookInstance)
 
