@@ -2,15 +2,19 @@ import express from 'express'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import path from 'path'
-import indexRouter from './router/index'
-import usersRouter from './router/user'
 import { AppDataSource } from './config/data-source'
 import router from './router/index'
 import i18next from 'i18next'
 import Backend from 'i18next-fs-backend'
 import middleware from 'i18next-http-middleware'
+import session from 'express-session'
+import flash from 'connect-flash'
+import dotenv from 'dotenv'
 
+dotenv.config()
 const app = express()
+
+const secret = process.env.SESSION_SECRET || 'secret'
 
 i18next
   .use(Backend)
@@ -35,6 +39,21 @@ i18next
 
 app.use(middleware.handle(i18next))
 
+app.use(
+  session({
+    resave: false,
+    saveUninitialized: true,
+    secret: secret
+  })
+)
+
+app.use(flash())
+
+app.use((req, res, next) => {
+  res.locals.messages = req.flash()
+  next()
+})
+
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
@@ -43,9 +62,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
-
-// Routes
-// import your routes and use them here
 
 app.use('/', router)
 

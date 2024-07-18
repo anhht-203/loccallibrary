@@ -1,6 +1,7 @@
 extends ../layout
 
-block content 
+block content
+  include ../partials/flash-messages 
   h1 #{t(title)}
   if bookInstances.length
     ul

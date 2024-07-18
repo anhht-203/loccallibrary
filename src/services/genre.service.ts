@@ -9,6 +9,9 @@ class GenreService {
   async getGenreList() {
     return this.genreRepository.find({ order: { name: 'ASC' } })
   }
+  async getGenreById(id: number) {
+    return this.genreRepository.findOne({ where: { id: id }, relations: ['books'] })
+  }
 }
 const genreService = new GenreService()
 export default genreService

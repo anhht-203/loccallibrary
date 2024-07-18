@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h1 #{t('home.genre')}: #{genre.name}
+  p #[strong #{t('home.book')} ] 
+  if genreBooks.length !== 0
+    each val, index in genreBooks
+      a(href=`/books/${val.id}`) #{val.title}
+      p #{val.summary}
+  else
+    p #{t('genre.message.emptyBookList')}
