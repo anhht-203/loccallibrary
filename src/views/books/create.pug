@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+
+  h1 #{t('book.createBook')}
+
+  form(action='/books/create', method='POST')
+    div.form-group
+      label(for='title') #{t('home.title')}
+      input#title.form-control(type='text', name='title')
+    div.form-group
+      // chọn tác giả
+      label(for='author') #{t('home.author')}
+      select#author.form-control(name='author')
+        option(value='') #{t('book.selectAuthor')}
+        each author in authors
+          option(value=author.id) #{author.firstName} #{author.familyName}
+    div.form-group
+      label(for='summary') #{t('book.summary')}
+      textarea#summary.form-control(name='summary')
+    div.form-group
+      label(for='isbn') #{t('book.isbn')}
+      input#isbn.form-control(type='text', name='isbn')
+    div.form-group
+      label(for='genre') #{t('book.genre')}:  
+      // checked
+      each genre in genres
+        div.form-check.form-check-inline
+          input.form-check-input(type='checkbox', name='genre', value=genre.id)
+          label.form-check-label #{genre.name}
+    div.form-group
+      input.btn.btn-primary(type='submit', value='Create')
+  if errors
+    ul
+      for error in errors
+        li!= error.msg

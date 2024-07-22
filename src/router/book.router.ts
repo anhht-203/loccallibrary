@@ -10,8 +10,13 @@ bookRouter.post('/create', bookController.createBookPost)
 // GET request to delete Book.
 bookRouter.get('/:id/delete', bookController.deleteBookGet)
 
+// POST request to delete Book.
+bookRouter.post('/:id/delete', bookController.deleteBookPost)
+
 // GET request to update Book.
-bookRouter.get('/:id/update', bookController.updateBook)
+bookRouter.get('/:id/update', bookController.updateBookGet)
+
+bookRouter.post('/:id/update', bookController.bookUpdatePost)
 
 // GET request for one Book.
 bookRouter.get('/:id', bookController.getBookDetail)

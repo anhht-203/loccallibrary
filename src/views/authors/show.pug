@@ -1,6 +1,7 @@
 extends ../layout
 
-block content 
+block content
+  include ../partials/flash-messages
   h1 #{t('home.author')}: #{author.firstName} #{author.familyName}
   p #[strong #{t('home.book')} ] 
   if authorBooks.length !== 0
@@ -8,4 +9,8 @@ block content
       a(href=`/books/${val.id}`) #{val.title}
       p #{val.summary}
   else
-    p #{t('author.message.emptyBookList')}
+    p #{t('book.title.emptyBookList')}
+  hr
+  p
+    a(href=`${author.id}/delete`) #{t('button.delete')}
+

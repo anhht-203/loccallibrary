@@ -9,7 +9,8 @@
     "author": "Tác giả",
     "genre": "Thể loại",
     "status": "Tình trạng",
-    "title": "Chủ đề"
+    "title": "Chủ đề",
+    "submit": "Gửi"
   },
   "sidebar" : {
     "name": "Thư viện địa phương",
@@ -27,6 +28,9 @@
     "vi": "Tiếng Việt"
   },
   "book": {
+    "createBook": "Tạo mới sách",
+    "deleteBook": "Xóa sách",
+    "updateBook": "Cập nhật sách",
     "title": {
       "name": "Chủ đề",
       "listOfBook": "Danh sách các quyển sách có trong thư viện",
@@ -37,15 +41,30 @@
     "author": "Tác giả",
     "genre": "Thể loại",
     "copies": "Bản sao",
-    "noGenre": "Không có thể loại nào cho sách này"
+    "noGenre": "Không có thể loại nào cho sách này",
+    "selectAuthor": "Chọn tác giả",
+    "deleteWarning":"Xóa các bản sao sách sau trước khi xóa sách này.",
+    "deleteConfirm": "Bạn có chắc chắn muốn xóa sách này không?"
   },
   "author": {
+    "createAuthor":"Tạo mới tác giả",
+    "deleteAuthor": "Xóa tác giả",
     "title": {
       "listOfAuthor": "Danh sách tác giả",
       "emptyAuthorList": "Không có tác giả nào"
-    }
+    },
+    "firstName": "Tên",
+    "familyName": "Họ",
+    "dateOfBirth": "Ngày sinh",
+    "dateOfDeath": "Ngày mất",
+    "noBook": "Không có sách nào của tác giả này",
+    "deleteWarning":"Xóa các quyển sách sau trước khi xóa tác giả này.",
+    "deleteConfirm": "Bạn có chắc chắn muốn xóa tác giả này không?"
   },
   "bookInstance": {
+    "createBookInstance": "Tạo mới bản sao sách",
+    "deleteBookInstance": "Xóa bản sao sách",
+    "updateBookInstance": "Cập nhật bản sao sách",
     "title": {
       "listOfBookInstance": "Danh sách các bản sao sách có trong thư viện",
       "emptyBookInstanceList": "Không có bản sao sách nào"
@@ -57,12 +76,61 @@
       "maintenance": "Bảo trì"
     },
     "dueBack": "Hạn cuối",
-    "noBookInstance": "Không có bản sao sách nào trong thư viện."
+    "noBookInstance": "Không có bản sao sách nào trong thư viện.",
+    "selectBook": "Chọn sách"
   },
   "genre": {
+    "createGenre": "Tạo mới thể loại",
+    "deleteGenre": "Xóa thể loại",
+    "updateGenre": "Cập nhật thể loại",
     "title": {
       "listOfGenre": "Danh sách thể loại",
       "emptyGenreList": "Không có thể loại nào"
-    }
+    },
+    "deleteWarning":"Xóa các quyển sách sau trước khi xóa thể loại này.",
+    "deleteConfirm": "Bạn có chắc chắn muốn xóa thể loại này không?"
+  },
+  "button": {
+    "submit": "Gửi",
+    "cancel": "Hủy",
+    "delete": "Xóa",
+    "edit": "Chỉnh sửa"
+  },
+  "validation": {
+    "required": "Trường này không được để trống",
+    "isbn": "Mã số ISBN không hợp lệ",
+    "date": "Ngày không hợp lệ",
+    "number": "Trường này phải là số",
+    "min": "Trường này phải có ít nhất {min} ký tự",
+    "max": "Trường này phải có nhiều nhất {max} ký tự",
+    "minMax": "Trường này phải có từ {min} đến {max} ký tự",
+    "invalid": "Trường này không hợp lệ",
+    "unique": "Trường này đã tồn tại",
+    "firstName": "Tên không được trống",
+    "familyName": "Họ không được trống",
+    "dateOfBirth": "Ngày sinh không hợp lệ",
+    "dateOfDeath": "Ngày mất không hợp lệ",
+    "imprint": "Nhà xuất bản không được trống",
+    "dueBack": "Hạn cuối không hợp lệ",
+    "author": "Tác giả không được trống",
+    "book": "Sách không được trống",
+    "genre": "Thể loại không được trống",
+    "status": "Tình trạng không được trống",
+    "title": "Chủ đề không được trống",
+    "summary": "Tóm tắt không được trống",
+    "nameGenre": "Tên thể loại không được trống"
+  },
+  "message": {
+    "deleteSuccess": "Xóa thành công",
+    "deleteFail": "Xóa thất bại",
+    "createSuccess": "Tạo mới thành công",
+    "createFail": "Tạo mới thất bại",
+    "updateSuccess": "Cập nhật thành công",
+    "updateFail": "Cập nhật thất bại",
+    "invalidAuthorId": "ID tác giả không hợp lệ",
+    "notFound": "Không tìm thấy",
+    "invalidBookInstanceId": "ID bản sao sách không hợp lệ",
+    "invalidBookId": "ID sách không hợp lệ",
+    "invalidGenreId": "ID thể loại không hợp lệ"
   }
 }

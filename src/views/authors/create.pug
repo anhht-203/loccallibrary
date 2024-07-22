@@ -1,0 +1,22 @@
+extends ../layout
+
+block content 
+  h1 #{t(title)}
+  form(method='POST')
+    div.form-group
+      label(for='firstName') #{t('author.firstName')}
+      input.form-control(type='text', name='firstName'  )
+    div.form-group
+      label(for='familyName') #{t('author.familyName')}
+      input.form-control(type='text', name='familyName'  )
+    div.form-group
+      label(for='dateOfBirth') #{t('author.dateOfBirth')}
+      input.form-control(type='date', name='dateOfBirth')
+    div.form-group
+      label(for='dateOfDeath') #{t('author.dateOfDeath')}
+      input.form-control(type='date', name='dateOfDeath')
+    button.btn.btn-primary(type='submit') #{t('home.submit')}
+  if errors
+    ul
+      for error in errors
+        li!= error.msg

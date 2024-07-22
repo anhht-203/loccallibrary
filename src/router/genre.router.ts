@@ -10,6 +10,9 @@ genreRouter.post('/create', genreController.createGenrePost)
 // GET request to delete Genre.
 genreRouter.get('/:id/delete', genreController.deleteGenreGet)
 
+// POST request to delete Genre.
+genreRouter.post('/:id/delete', genreController.deleteGenrePost)
+
 // GET request to update Genre.
 genreRouter.get('/:id/update', genreController.updateGenre)
 

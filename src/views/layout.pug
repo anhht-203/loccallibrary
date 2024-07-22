@@ -10,6 +10,7 @@ html
     link(rel='stylesheet' , href='/stylesheets/layout.css' )
   body
     div(class='container-fluid' )
+      div(class='row mt-5' )
         div(class='col-sm-2' )
           block sidebar
             ul(class='sidebar-nav' )
@@ -25,13 +26,13 @@ html
                 a(href='/bookinstances' ) #{t('sidebar.bookInstance')}
               hr
               li 
-                a(href='/createAuthor' ) #{t('sidebar.createAuthor')}
+                a(href='/authors/create' ) #{t('sidebar.createAuthor')}
               li
-                a(href='/createGenre' ) #{t('sidebar.createGenre')}
+                a(href='/genres/create' ) #{t('sidebar.createGenre')}
               li
-                a(href='/createBook' ) #{t('sidebar.createBook')}
+                a(href='/books/create' ) #{t('sidebar.createBook')}
               li
-                a(href='/createBookInstance' ) #{t('sidebar.createBookInstance')}
+                a(href='/bookinstances/create' ) #{t('sidebar.createBookInstance')}
               li
                 a(href='?lang=en' ) #{t('language.en')} | 
                 a(href='?lang=vi' ) #{t('language.vi')}

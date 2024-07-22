@@ -16,6 +16,12 @@ class BookInstanceService {
   async getBookInstanceById(id: number) {
     return this.bookInstanceRepository.findOne({ relations: ['book'], where: { id: id } })
   }
+  async createBookInstance(bookInstance: BookInstance) {
+    return this.bookInstanceRepository.save(bookInstance)
+  }
+  async deleteBookInstance(id: number) {
+    return this.bookInstanceRepository.delete(id)
+  }
 }
 const bookInstanceService = new BookInstanceService()
 export default bookInstanceService

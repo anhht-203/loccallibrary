@@ -8,4 +8,7 @@ block content
       a(href=`/books/${val.id}`) #{val.title}
       p #{val.summary}
   else
-    p #{t('genre.message.emptyBookList')}
+    p #{t('book.title.emptyBookList')}
+  hr
+  p
+  a(href=`${genre.id}/delete`) #{t('button.delete')}

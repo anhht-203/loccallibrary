@@ -10,9 +10,11 @@ import middleware from 'i18next-http-middleware'
 import session from 'express-session'
 import flash from 'connect-flash'
 import dotenv from 'dotenv'
-
+import bodyParser from 'body-parser'
 dotenv.config()
 const app = express()
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
 const secret = process.env.SESSION_SECRET || 'secret'
 
